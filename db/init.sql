@@ -1,13 +1,20 @@
-CREATE DATABASE knights;
-use knights;
+CREATE DATABASE employees;
+use employees;
 
-CREATE TABLE favorite_colors (
-  name VARCHAR(20),
-  color VARCHAR(10)
+CREATE TABLE hired_employees (
+    id int,
+    name varchar(255),
+    datetime varchar(255),
+    department_id int,
+    job_id int
 );
 
-INSERT INTO favorite_colors
-  (name, color)
-VALUES
-  ('Lancelot', 'blue'),
-  ('Galahad', 'yellow');
+CREATE TABLE departments (
+    id int,
+    department varchar(255)
+);
+
+CREATE TABLE jobs (
+    id int,
+    job varchar(255)
+);

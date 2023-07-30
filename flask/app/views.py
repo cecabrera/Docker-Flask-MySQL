@@ -5,18 +5,18 @@ import os
 
 from app import app
 
-def favorite_colors() -> List[Dict]:
+def db_select_jobs() -> List[Dict]:
     config = {
         'user': 'root',
         'password': 'root',
         'host': 'db',
         'port': '3306',
-        'database': 'knights'
+        'database': 'employees'
     }
     connection = mysql.connector.connect(**config)
     cursor = connection.cursor()
-    cursor.execute('SELECT * FROM favorite_colors')
-    results = [{name: color} for (name, color) in cursor]
+    cursor.execute('SELECT * FROM jobs')
+    results = [{_id: _job} for (_id, _job) in cursor]
     cursor.close()
     connection.close()
 
@@ -38,4 +38,5 @@ def index():
 
 @app.route('/db')
 def index_db() -> str:
-    return json.dumps({'favorite_colors': favorite_colors()})
+    return json.dumps({'db_select_jobs': db_select_jobs()})
+
