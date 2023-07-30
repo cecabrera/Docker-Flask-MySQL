@@ -114,5 +114,22 @@ def delete_record(id):
     finally:
         return redirect(url_for("index"))
 
+from src.df_insight1 import df_insight1
+
+@app.route('/insight1')
+def insight1():
+
+    as1 = df_insight1(con=con)
+
+    template = render_template(
+        template_name_or_list="view_excel.html",
+        data=as1.to_html(
+            index=False,
+            classes="table table-bordered"
+        ).replace('<th>','<th style="text-align:center">'))
+
+    return template
+
+
 if __name__ == '__main__':
     app.run(debug=True)
