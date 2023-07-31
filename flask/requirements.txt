@@ -1,5 +1,5 @@
 Flask
 Jinja2
 uWSGI
-mysql-connector
-typing
+pandas 
+sqlalchemy
