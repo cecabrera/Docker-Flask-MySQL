@@ -2,14 +2,9 @@
 
 Based on:
 - [Aplicación web basada en Flask y MySQL, y despliegue con Docker y docker-compose en Digital Ocean](https://jaimesendraberenguer.medium.com/aplicaci%C3%B3n-web-basada-en-flask-y-mysql-y-despliegue-con-docker-y-docker-compose-en-digital-ocean-4754a400d4e3)
-- [Blog post about creating a flask-mysql app with docker](https://stavshamir.github.io/python/dockerizing-a-flask-mysql-app-with-docker-compose/)
-- [Building a Flask app with Docker | Learning Flask Ep. 24](https://pythonise.com/series/learning-flask/building-a-flask-app-with-docker-compose)
+- [Excel-File-Upload-SQLite](https://github.com/sathyainfotech/Excel-File-Upload-SQLite)
 
-In this _Post_, I will take an existing simple web application based on ```Flask``` and ```sqlite3```, and deploy it with ```Docker``` and ```docker-compose```.
-
-This repo is a fork from this repo: 
-
-[jaisenbe58r/Docker-Flask-MySQL](https://github.com/jaisenbe58r/Docker-Flask-MySQL)
+I will take an existing simple web application based on ```Flask``` and ```sqlite3```, and deploy it with ```Docker``` and ```docker-compose```.
 
 Project structure:
 ```
@@ -180,3 +175,4 @@ sudo bash start.sh
 ```
 
 Ahora ya puede visitar su aplicación en http://```your-domain:8003``` desde un navegador externo al servidor para ver la la aplicación en ejecución.
+
