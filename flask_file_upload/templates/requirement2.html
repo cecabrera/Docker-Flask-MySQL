@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Requirements</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+    <div class="col-md-offset-3 col-md-5" style="margin-top:100px">
+        <h3 class="page-header text-primary text-center"><span class="fa fa-image">  Requirement 2 </span></h3>
+        <br>
+        <p>List of ids, name and number of employees hired of each department that hired more employees than the mean of employees hired in 2021 for all the departments, ordered by the number of employees hired (descending).</p>
+        <br>
+        {{data|safe}}
+    </div>
+</body>
+</html>
