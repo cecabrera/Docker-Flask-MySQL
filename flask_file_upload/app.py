@@ -112,6 +112,36 @@ def jobs():
 
     return template
 
+@app.route('/hired_employees')
+def hired_employees():
+
+    con=sqlite3.connect("MyData.db")
+    jobs_df = read_sql(con=con, sql="SELECT * FROM hired_employees")
+    
+    template = render_template(
+        template_name_or_list="view_excel.html",
+        data=jobs_df.to_html(
+            index=False,
+            classes="table table-bordered"
+        ).replace('<th>','<th style="text-align:center">'))
+
+    return template
+
+@app.route('/departments')
+def departments():
+
+    con=sqlite3.connect("MyData.db")
+    jobs_df = read_sql(con=con, sql="SELECT * FROM departments")
+    
+    template = render_template(
+        template_name_or_list="view_excel.html",
+        data=jobs_df.to_html(
+            index=False,
+            classes="table table-bordered"
+        ).replace('<th>','<th style="text-align:center">'))
+
+    return template
+
 @app.route('/requirement1')
 def requirement1():
 
