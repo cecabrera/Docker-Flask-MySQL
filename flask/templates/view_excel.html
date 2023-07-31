@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Requirements</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+    <div class="col-md-offset-3 col-md-5" style="margin-top:100px">
+        <form action="/">
+            <input type="submit" value="Go Home" />
+        </form>
+        <h3 class="page-header text-primary text-center"><span class="fa fa-image">  Requirement view </span></h3>
+        {{data|safe}}
+    </div>
+</body>
+</html>

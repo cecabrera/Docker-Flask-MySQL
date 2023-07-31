@@ -1,16 +1,14 @@
-# Aplicación web basada en Flask y MySQL, y despliegue con Docker y docker-compose en Digital Ocean
+# Web application using Flask and SQLite3, and deployment using docker-compose in Digital Ocean
 
-![Portada](images/portada6.png)
-
- Basado en:
- - [Blog post about creating a flask-mysql app with docker](https://stavshamir.github.io/python/dockerizing-a-flask-mysql-app-with-docker-compose/)
+Based on:
+- [Blog post about creating a flask-mysql app with docker](https://stavshamir.github.io/python/dockerizing-a-flask-mysql-app-with-docker-compose/)
 - [Building a Flask app with Docker | Learning Flask Ep. 24](https://pythonise.com/series/learning-flask/building-a-flask-app-with-docker-compose)
 
-En este _Post_ vamos a tratar de tomar una aplicación web simple existente basada en ```Flask``` y ```MySQL```, y desplegarla con ```Docker``` y ```docker-compose``` en ```Digital Ocean```.
+In this _Post_, I will take an existing simple web application based on ```Flask``` and ```MySQL```, and deploy it with ```Docker``` and ```docker-compose``` on ```Digital Ocean```.
 
-Se considera una mejor práctica que un contenedor tenga solo una responsabilidad y un proceso, por lo que para nuestra aplicación necesitaremos al menos dos contenedores: uno para ejecutar la aplicación en sí y otro para ejecutar la base de datos. Coordinaremos estos dos contenedores con ```docker-compose```. 
+It is considered a best practice for a container to have only one responsibility and one process, so for our application, we will need at least two containers: one to run the application itself and another one to run the database. We will coordinate these two containers with ```docker-compose```.
 
-Todo el código utilizado en este Post está disponible en el siguiente repositorio:
+All the code used in this Post is available in the following repository.:
 
 [jaisenbe58r/Docker-Flask-MySQL](https://github.com/jaisenbe58r/Docker-Flask-MySQL)
 
