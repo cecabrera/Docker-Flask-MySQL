@@ -6,6 +6,8 @@ import sqlite3
 import pandas as pd
 from src.readSQL import readSQL
 from src.upload_csv import upload_csv
+from src.df_insight1 import df_insight1
+from src.df_insight2 import df_insight2
 
 
 app=Flask(__name__)
@@ -114,16 +116,30 @@ def delete_record(id):
     finally:
         return redirect(url_for("index"))
 
-from src.df_insight1 import df_insight1
 
 @app.route('/insight1')
 def insight1():
-
+    con=sqlite3.connect("MyData.db")
     as1 = df_insight1(con=con)
 
     template = render_template(
         template_name_or_list="view_excel.html",
         data=as1.to_html(
+            index=False,
+            classes="table table-bordered"
+        ).replace('<th>','<th style="text-align:center">'))
+
+    return template
+
+
+@app.route('/insight2')
+def insight2():
+    con=sqlite3.connect("MyData.db")
+    as2 = df_insight2(con=con)
+
+    template = render_template(
+        template_name_or_list="view_excel.html",
+        data=as2.to_html(
             index=False,
             classes="table table-bordered"
         ).replace('<th>','<th style="text-align:center">'))
