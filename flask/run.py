@@ -13,7 +13,7 @@ from src.db.select_db import select_db
 from src.requirements.df_requirement1 import df_requirement1
 from src.requirements.df_requirement2 import df_requirement2
 
-app.config['UPLOAD_FOLDER']="static\Excel"
+app.config['UPLOAD_FOLDER']="static/Excel"
 app.secret_key="123"
 
 db_path = "MyData.db"
