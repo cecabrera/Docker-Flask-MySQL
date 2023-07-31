@@ -3,9 +3,9 @@ from src.readSQL import readSQL
 from sqlalchemy.connectors import Connector
 
 
-def df_insight1(con: Connector) -> DataFrame:
+def df_requirement1(con: Connector) -> DataFrame:
 
-    query = readSQL(filename="sql/assessment1.sql")
+    query = readSQL(filename="sql/requirement1.sql")
 
     df = read_sql(con=con, sql=query)
 

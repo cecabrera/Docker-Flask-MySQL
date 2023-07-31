@@ -6,8 +6,8 @@ import sqlite3
 import pandas as pd
 from src.readSQL import readSQL
 from src.upload_csv import upload_csv
-from src.df_insight1 import df_insight1
-from src.df_insight2 import df_insight2
+from src.requirements.df_requirement1 import df_requirement1
+from src.requirements.df_requirement2 import df_requirement2
 
 
 app=Flask(__name__)
@@ -79,48 +79,11 @@ def index():
 
     return template
 
-@app.route('/view_excel/<string:id>')
-def view_excel(id):
-    con = sqlite3.connect("MyData.db")
-    con.row_factory = sqlite3.Row
-    cur = con.cursor()
-    cur.execute("select * from data where pid=?",(id))
-    data = cur.fetchall()
-    print(data)
-    for val in data:
-        path = os.path.join("static/Excel/",val[1])
-        print(val[1])
-        data=pd.read_csv(path)
-    con.close()
 
-    template = render_template(
-        template_name_or_list="view_excel.html",
-        data=data.to_html(
-            index=False,
-            classes="table table-bordered"
-        ).replace('<th>','<th style="text-align:center">'))
-
-    return template
-
-@app.route('/delete_record/<string:id>')
-def delete_record(id):
-    try:
-        con=sqlite3.connect("MyData.db")
-        cur=con.cursor()
-        cur.execute("delete from data where pid=?",[id])
-        con.commit()
-        flash("Record Deleted Successfully","success")
-        con.close()
-    except:
-        flash("Record Deleted Failed", "danger")
-    finally:
-        return redirect(url_for("index"))
-
-
-@app.route('/insight1')
-def insight1():
+@app.route('/requirement1')
+def requirement1():
     con=sqlite3.connect("MyData.db")
-    as1 = df_insight1(con=con)
+    as1 = df_requirement1(con=con)
 
     template = render_template(
         template_name_or_list="view_excel.html",
@@ -132,10 +95,10 @@ def insight1():
     return template
 
 
-@app.route('/insight2')
-def insight2():
+@app.route('/requirement2')
+def requirement2():
     con=sqlite3.connect("MyData.db")
-    as2 = df_insight2(con=con)
+    as2 = df_requirement2(con=con)
 
     template = render_template(
         template_name_or_list="view_excel.html",
