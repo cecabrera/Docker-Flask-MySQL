@@ -1,7 +1,10 @@
 from pandas import read_csv, read_sql
+import sqlite3
 
 
-def upload_csv(con, filepath, table_name):
+def upload_csv(db_path, filepath, table_name):
+
+    con = sqlite3.connect(db_path)
 
     # Read the CSV as a DataFrame
     df = read_csv(
